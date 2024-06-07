@@ -1,0 +1,75 @@
+id: js-secrets-finder
+
+info:
+  name: JavaScript Secrets Finder
+  author: oloko
+  severity: info
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/*.js"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "API_KEY"
+          - "SECRET"
+          - "TOKEN"
+          - "PASSWORD"
+		  - "aws_access_key"
+          - "aws_secret_access_key"
+          - "aws_session_token"
+          - "gcp_client_email"
+          - "gcp_private_key"
+          - "gcp_project_id"
+          - "azure_tenant_id"
+          - "azure_client_secret"
+          - "ibm_api_key"
+          - "digitalocean_personal_access_token"
+          - "heroku_api_key"
+          - "do_spaces_access_key"
+          - "do_spaces_secret_key"
+          - "stripe_api_key"
+          - "stripe_publishable_key"
+          - "stripe_secret_key"
+          - "paypal_client_id"
+          - "paypal_secret"
+          - "twilio_account_sid"
+          - "twilio_auth_token"
+          - "sendgrid_api_key"
+          - "mailgun_api_key"
+          - "mailchimp_api_key"
+          - "slack_api_token"
+          - "slack_bot_token"
+          - "slack_oauth_token"
+          - "github_token"
+          - "github_client_id"
+          - "github_client_secret"
+          - "gitlab_private_token"
+          - "gitlab_access_token"
+          - "bitbucket_client_id"
+          - "bitbucket_client_secret"
+          - "facebook_app_id"
+          - "facebook_app_secret"
+          - "twitter_consumer_key"
+          - "twitter_consumer_secret"
+          - "twitter_access_token"
+          - "twitter_access_token_secret"
+          - "google_client_id"
+          - "google_client_secret"
+          - "google_api_key"
+          - "linkedin_client_id"
+          - "linkedin_client_secret"
+          - "instagram_client_id"
+          - "instagram_client_secret"
+          - "snapchat_client_id"
+          - "snapchat_client_secret"
+          - "pinterest_app_id"
+		  
+        part: body
+
+      - type: status
+        status:
+          - 200

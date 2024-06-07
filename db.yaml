@@ -1,0 +1,70 @@
+id: js-secrets-finder
+
+info:
+  name: JavaScript Secrets Finder
+  author: oloko
+  severity: info
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/*.js"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "db_username"
+		  - "db_password"
+		  - "db_host"
+		  - "db_port"
+		  - "db_name"
+		  - "db_dialect"
+		  - "mysql_username"
+		  - "mysql_password"
+		  - "mysql_host"
+		  - "mysql_port"
+		  - "mysql_database"
+		  - "postgres_username"
+		  - "postgres_password"
+		  - "postgres_host"
+		  - "postgres_port"
+		  - "postgres_database"
+		  - "oracle_username"
+		  - "oracle_password"
+		  - "oracle_host"
+		  - "oracle_port"
+		  - "oracle_database"
+		  - "sqlite_file"
+		  - "mongodb_uri"
+		  - "mongodb_username"
+		  - "mongodb_password"
+		  - "mongodb_host"
+		  - "mongodb_port"
+		  - "mongodb_database"
+		  - "redis_host"
+		  - "redis_port"
+		  - "redis_password"
+		  - "cassandra_username"
+		  - "cassandra_password"
+		  - "cassandra_host"
+		  - "cassandra_port"
+		  - "cassandra_keyspace"
+		  - "neo4j_username"
+		  - "neo4j_password"
+		  - "neo4j_host"
+		  - "neo4j_port"
+		  - "neo4j_database"
+		  - "couchdb_username"
+		  - "couchdb_password"
+		  - "couchdb_host"
+		  - "couchdb_port"
+		  - "couchdb_database"
+		  - "dynamodb_access_key"
+		  - "dynamodb_secret_access_key"
+		  - "dynamodb_region"
+		  - "dynamodb_table"		  
+        part: body
+      - type: status
+        status:
+          - 200

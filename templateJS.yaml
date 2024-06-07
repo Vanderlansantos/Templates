@@ -18,7 +18,7 @@ requests:
           - "SECRET"
           - "TOKEN"
           - "PASSWORD"
-		  - "aws_access_key"
+		      - "aws_access_key"
           - "aws_secret_access_key"
           - "aws_session_token"
           - "gcp_client_email"
@@ -66,10 +66,8 @@ requests:
           - "instagram_client_secret"
           - "snapchat_client_id"
           - "snapchat_client_secret"
-          - "pinterest_app_id"
-		  
+          - "pinterest_app_id"		  
         part: body
-
       - type: status
         status:
           - 200
